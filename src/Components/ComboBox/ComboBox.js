@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import axios from 'axios'
+import ListMeals from '../ListMeals/ListMeals'
 import {useState,useEffect} from 'react'
 
 
@@ -22,6 +23,7 @@ const getingr=()=>{
     getingr();
 },[])
   return (
+    <div>
     <Autocomplete
       id="combo-box-ingr"
       inputValue={inputValue}
@@ -33,6 +35,9 @@ const getingr=()=>{
       style={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
     />
+    <ListMeals data={inputValue}></ListMeals>
+    </div>
+
   );
 }
 
