@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import ComboBox from '../ComboBox/ComboBox'
 import NavbarComp from '../Navbar/NavbarComp'
-import Meals from '../Meals/Meals'
+
 import axios from 'axios'
 
 import {useState,useEffect} from 'react'
@@ -16,7 +16,7 @@ const Home = (props) => {
 const [value,setValue] = useState(0)
 const [array,setArray] = useState(["not working","ue"])
 
-
+/*
 
 const getmeal=()=>{
     axios
@@ -28,7 +28,7 @@ const getmeal=()=>{
  
 useEffect(()=> {
     getmeal()
-},[])
+},[])*/
 
     /*const test=()=>{
         if(value==5){
@@ -41,7 +41,7 @@ useEffect(()=> {
         
         
         <ComboBox/>
-        <Meals data={[array[0].strMeal,array[0].strMealThumb,array[0].idMeal]}></Meals>
+        
     
 
 
