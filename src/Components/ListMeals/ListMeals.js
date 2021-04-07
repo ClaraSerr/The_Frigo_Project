@@ -5,8 +5,8 @@ import {useState,useEffect} from 'react'
 
 
 const ListMeals = (props) => {
-console.log(props.data)
-const [array,setArray] = useState(["not working","ue"])
+console.log("ingrédient",props.data)
+const [array,setArray] = useState(["",""])
 
 
 
@@ -17,15 +17,18 @@ const getmeal=(props)=>{
         setArray(response.data.meals);
       })
   }
+
+  useEffect(()=> {
+    getmeal(props)
+},[props])
+
   const items = []
 
 for (const [index, value] of array.entries()) {
   items.push(<Meals data={[value.strMeal,value.strMealThumb,value.idMeal]} />)
 }
  
-useEffect(()=> {
-    getmeal(props)
-},[props])
+
     return(
         <div>
        {items}
