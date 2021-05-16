@@ -1,40 +1,32 @@
-import React from 'react'
-import Meals from '../Meals/Meals'
-import axios from 'axios'
-import {useState,useEffect} from 'react'
-
+import React from "react";
+import Meals from "../Meals/Meals";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import "./listMeals.css";
 
 const ListMeals = (props) => {
-console.log("ingrédient",props.data)
-const [array,setArray] = useState(["",""])
+  console.log(props.data);
+  const [array, setArray] = useState(["not working", "ue"]);
 
-
-
-const getmeal=(props)=>{
+  const getmeal = (props) => {
     axios
-      .get('https://www.themealdb.com/api/json/v1/1/filter.php?i='+props.data)
-      .then(response =>{
+      .get("https://www.themealdb.com/api/json/v1/1/filter.php?i=" + props.data)
+      .then((response) => {
         setArray(response.data.meals);
-      })
+      });
+  };
+  const items = [];
+
+  for (const [index, value] of array.entries()) {
+    items.push(
+      <Meals data={[value.strMeal, value.strMealThumb, value.idMeal]} />
+    );
   }
 
-  useEffect(()=> {
-    getmeal(props)
-},[props])
+  useEffect(() => {
+    getmeal(props);
+  }, [props]);
+  return <div class="recipes">{items}</div>;
+};
 
-  const items = []
-
-for (const [index, value] of array.entries()) {
-  items.push(<Meals data={[value.strMeal,value.strMealThumb,value.idMeal]} />)
-}
- 
-
-    return(
-        <div>
-       {items}
-      </div>
-     )
-  
-   }
-  
-   export default ListMeals
+export default ListMeals;

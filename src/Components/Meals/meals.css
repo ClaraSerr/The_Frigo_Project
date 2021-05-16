@@ -1,0 +1,25 @@
+.results {
+  width: 19rem;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #e1cbb1;
+  padding: 2rem;
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 1rem 2rem 3rem #aaa;
+}
+
+.sprite {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.legende {
+  max-width: 300px;
+  text-align: center;
+  margin: 12px 0px;
+  font-size: 1.4rem;
+}
