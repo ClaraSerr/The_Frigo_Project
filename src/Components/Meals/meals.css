@@ -9,7 +9,18 @@
   border-radius: 0.5rem;
   box-shadow: 1rem 2rem 3rem #aaa;
 }
-
+a.test {
+  text-decoration: none;
+}
+a.test:link {
+  color: rgb(0, 0, 0);
+}
+a.test:visited {
+  color: rgb(31, 31, 31);
+}
+a.test:hover {
+  text-decoration: underline;
+}
 .sprite {
   height: 300px;
   width: 300px;
